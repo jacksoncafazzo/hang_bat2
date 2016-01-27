@@ -1,12 +1,14 @@
 function randomWordGenerator (wordArray) {
   var randomNumber = Math.floor(Math.random() * wordArray.length);
-  return wordArray[randomNumber];
-}
-
-function letterArray (word) {
+  var tempWord = wordArray[randomNumber];
   var currentArray = [];
-  for (var i = 0; i < word.length; i ++) {
-    currentArray.push(word.charAt(i));
-  } 
+  for (var i = 0; i < tempWord.length; i ++) {
+    currentArray.push(tempWord.charAt(i));
+  }
   return currentArray;
 }
+
+// function letterArray (word) {
+//
+//   return currentArray;
+// }
