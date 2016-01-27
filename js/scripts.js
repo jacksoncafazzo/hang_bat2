@@ -9,7 +9,7 @@ function randomWordGenerator (wordArray) {
 }
 
 function getColumnWidths (currentArray) {
-  return 12 / currentArray.length;
+  return Math.floor(12 / currentArray.length);
 }
 
 $(document).ready(function() {
@@ -17,11 +17,11 @@ $(document).ready(function() {
   $("body").data("wordBank", wordBank);
   $("#playNewGame").click(function() {
     // debugger;
+    $("#spacesRow").empty();
     var wordBank = $("body").data("wordBank");
     var randomWord = randomWordGenerator(wordBank);
-    var colWidths = getColumnWidths(randomWord);
     for (var i = 0; i < randomWord.length; i++) {
-      $("button#spacesRow").append('<div class="col-md-' + colWidths + ' letterSpaces"></div>');
+      $("#spacesRow").append('<div class="col-sm-' + getColumnWidths(randomWord) + ' letterSpaces letterSpaces' + i + '"></div>');
     }
   });
 });
