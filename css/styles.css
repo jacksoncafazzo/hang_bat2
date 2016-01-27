@@ -1,0 +1,25 @@
+#batRow {
+  min-height: 20em;
+  background-color: blue;
+}
+
+#playNewGame {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+
+
+
+
+#spacesRow {
+  min-height: 20em;
+  border-bottom: 2px solid black;
+
+}
+
+#spacesRow .letterSpaces {
+  border-bottom: 2px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
