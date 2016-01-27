@@ -16,12 +16,16 @@ $(document).ready(function() {
   var wordBank = ["mango", "guava", "hibiscus", "megabat", "nectar", "fruit", "watermelon", "bananas", "seeds", "peel", "pulp"];
   $("body").data("wordBank", wordBank);
   $("#playNewGame").click(function() {
-    // debugger;
+    debugger;
     $("#spacesRow").empty();
     var wordBank = $("body").data("wordBank");
     var randomWord = randomWordGenerator(wordBank);
     for (var i = 0; i < randomWord.length; i++) {
-      $("#spacesRow").append('<div class="col-sm-' + getColumnWidths(randomWord) + ' letterSpaces letterSpaces' + i + '"></div>');
+      $("#spacesRow").append('<div class="col-sm-' + getColumnWidths(randomWord) + ' letterSpaces" id="letterSpaces' + i + '"></div>');
+    }
+    for (var i = 0; i < randomWord.length; i++) {
+      $("#letterSpaces" + i).text(randomWord[i]);
+
     }
   });
 });
