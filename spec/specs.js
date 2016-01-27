@@ -9,3 +9,9 @@ describe("randomWordGenerator", function(){
     expect(randomWordGenerator(wordArray)).to.equal("guava");
   })
 });
+
+describe("letterArray", function() {
+  it("will return a word into an array of word letters", function () {
+    expect(letterArray("cat")).to.eql(['c','a','t'])
+  })
+});
