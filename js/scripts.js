@@ -13,10 +13,10 @@ function getColumnWidths (currentArray) {
 }
 
 $(document).ready(function() {
-  var wordBank = ["mango", "guava", "hibiscus", "megabat", "nectar", "fruit", "watermelon", "bananas", "seeds", "peel", "pulp"];
+  var wordBank = ["mango", "guava", "hibiscus", "megabat", "nectars", "fruit", "watermelon", "bananas", "seeds", "peels", "pulpy"];
   $("body").data("wordBank", wordBank);
   $("#playNewGame").click(function() {
-    debugger;
+    // debugger;
     $("#spacesRow").empty();
     var wordBank = $("body").data("wordBank");
     var randomWord = randomWordGenerator(wordBank);
