@@ -10,7 +10,11 @@
 
 
 
+.letterSpaces {
+  font-size: 50px;
+  font-weight: bold;
 
+}
 
 #spacesRow {
   /*border-bottom: 2px solid black;*/
@@ -18,8 +22,8 @@
 }
 
 #spacesRow .letterSpaces {
-  min-height: 20em;
-
+  /*min-height: 20em;*/
+  text-align: center;
   border-bottom: 5px solid black;
   margin-left: 3px;
   margin-right: 3px;
