@@ -14,3 +14,10 @@ describe("randomWordGenerator", function(){
     expect(randomWordGenerator(wordArray)).to.eql(['m','a','n','g','o']);
   });
 });
+
+describe("getColumnWidths", function() {
+  it("divide word length by 12 to get the width of the columns", function () {
+    var currentArray = ['m','a','n','g','o'];
+    expect(getColumnWidths(currentArray)).to.equal(2.4);
+  });
+});

@@ -8,7 +8,6 @@ function randomWordGenerator (wordArray) {
   return currentArray;
 }
 
-// function letterArray (word) {
-//
-//   return currentArray;
-// }
+function getColumnWidths (currentArray) {
+  return 12 / currentArray.length;
+}
