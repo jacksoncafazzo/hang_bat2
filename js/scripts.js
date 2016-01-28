@@ -13,21 +13,21 @@ function getColumnWidths (currentArray) {
 }
 
 function letterMatch (letter) {
-  // debugger;
+  debugger;
   var randomWord = ['m','a','n','g','o'];
+  var tempMatchObj = new userGuessValues(letter, randomWord, [""]);
   // var randomWord = $("body").data("randomWord");
   for (var i = 0; i < randomWord.length; i++) {
     if (letter === randomWord[i]) {
-      (randomWord[i]);
-      return i;
-    // } else {
-    //   return false;
-    }
-
+      tempMatchObj.matchTrue[i] = true;
+    } else
+      tempMatchObj.matchTrue[i] = false;
   }
-  var alphabetArray = alphabetArray.slice.call(letter);
+  return tempMatchObj;
 
-console.log(alphabetArray);
+  // var alphabetArray = alphabetArray.slice.call(letter);
+
+// console.log(alphabetArray);
 }
 
 function userGuessValues (letter, randomWord, matchTrue) {

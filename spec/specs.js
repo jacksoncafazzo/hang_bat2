@@ -30,17 +30,10 @@ describe("getColumnWidths", function() {
 
 describe("letterMatch", function () {
   it("check the randomWord letters for a match", function () {
-    expect(letterMatch('a')).to.equal('a');
+    expect(letterMatch('a')).to.equal("tempMatchObject");
   });
 });
 
-// describe("userGuessValues", function () {
-//   it("creates an object to show if letter matches", function () {
-//     var randomWord = ['m','a','n','g','o'];
-//     var letter = "a";
-//       expect(new userGuessValues("n", randomWord)).to.eql();
-//   });
-// });
 
 describe("userGuessValues", function () {
   it("creates an object with the following properties", function () {
