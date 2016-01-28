@@ -20,6 +20,8 @@ function letterMatch (letter) {
   for (var i = 0; i < randomWord.length; i++) {
     if (letter === randomWord[i]) {
       tempMatchObj.matchTrue[i] = true;
+      tempMatchObj.remainingLetters.splice(letter, letter);
+      console.log(tempMatchObj.remainingLetters);
     } else
       tempMatchObj.matchTrue[i] = false;
   }
@@ -30,10 +32,11 @@ function letterMatch (letter) {
 // console.log(alphabetArray);
 }
 
-function userGuessValues (letter, randomWord, matchTrue) {
+function userGuessValues (letter, randomWord, matchTrue, remainingLetters) {
   this.letter = letter;
   this.randomWord = randomWord;
   this.matchTrue = matchTrue;
+  this.remainingLetters = remainingLetters;
 }
 
 $(document).ready(function() {
@@ -55,6 +58,15 @@ $(document).ready(function() {
 
     $("body").data("randomWord", randomWord);
   });
+
+  $(".alphabetBtn").click(function (){
+    var letterChoice = ($(this).text());
+    console.log(letterChoice);
+
+
+  });
+
+
   //
   // new click jquerey
   // $("body").data("alphabetArray")

@@ -40,9 +40,11 @@ describe("userGuessValues", function () {
     var randomWord = ['m','a','n','g','o'];
     var letter = "a";
     var matchTrue = true;
-    var userGuess = new userGuessValues(letter, randomWord, matchTrue);
+    var remainingLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    var userGuess = new userGuessValues(letter, randomWord, matchTrue, remainingLetters);
       expect(userGuess.letter).to.equal("a");
       expect(userGuess.randomWord).to.eql['m','a','n','g','o'];
       expect(userGuess.matchTrue).to.equal(true);
+      expect(userGuess.remainingLetters).to.eql['b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   });
 });
