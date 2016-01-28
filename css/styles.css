@@ -11,9 +11,16 @@
 
 
 .letterSpaces {
+  text-align: center;
+  border-bottom: 5px solid black;
+  margin-left: 3px;
+  margin-right: 3px;
   font-size: 50px;
   font-weight: bold;
+}
 
+.userGuess {
+  visibility: hidden;
 }
 
 #spacesRow {
@@ -21,10 +28,7 @@
 
 }
 
-#spacesRow .letterSpaces {
+#letterSpaces .userGuess {
   /*min-height: 20em;*/
-  text-align: center;
-  border-bottom: 5px solid black;
-  margin-left: 3px;
-  margin-right: 3px;
+
 }
