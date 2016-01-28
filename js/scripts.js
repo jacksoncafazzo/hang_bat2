@@ -13,26 +13,27 @@ function getColumnWidths (currentArray) {
 }
 
 function letterMatch (letter) {
-  debugger;
-  var randomWord = ['m','a','n','g','o'];
-  var tempMatchObj = new userGuessValues(letter, randomWord, [""]);
-  // var randomWord = $("body").data("randomWord");
+  // debugger;
+  var userGuessValues = $("body").data("userGuessValues");
+  var randomWord = userGuessValues.randomWord;
+  var remainingLetters = userGuessValues.remainingLetters;
+
   for (var i = 0; i < randomWord.length; i++) {
     if (letter === randomWord[i]) {
-      tempMatchObj.matchTrue[i] = true;
-      tempMatchObj.remainingLetters.splice(letter, letter);
-      console.log(tempMatchObj.remainingLetters);
+      userGuessValues.matchTrue[i] = true;
+      remainingLetters = remainingLetters.splice(letter, letter);
+      console.log(remainingLetters);
     } else
-      tempMatchObj.matchTrue[i] = false;
+      userGuessValues.matchTrue[i] = false;
   }
-  return tempMatchObj;
+  return userGuessValues;
 
   // var alphabetArray = alphabetArray.slice.call(letter);
 
 // console.log(alphabetArray);
 }
 
-function userGuessValues (letter, randomWord, matchTrue, remainingLetters) {
+function UserGuessValues (letter, randomWord, matchTrue, remainingLetters) {
   this.letter = letter;
   this.randomWord = randomWord;
   this.matchTrue = matchTrue;
@@ -43,7 +44,6 @@ $(document).ready(function() {
   var wordBank = ["mango", "guava", "hibiscus", "megabat", "nectars", "fruit", "watermelon", "bananas", "seeds", "peels", "pulpy"];
   $("body").data("wordBank", wordBank);
   $("#playNewGame").click(function() {
-    var alphabetArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     // debugger;
     $("#spacesRow").empty();
     var wordBank = $("body").data("wordBank");
@@ -55,12 +55,15 @@ $(document).ready(function() {
       $("#letterDisplay" + i).text(randomWord[i]);
       $("#letterDisplay" + i).hide();
     }
+    var userGuessValues = new UserGuessValues("", randomWord, "", ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']);
 
-    $("body").data("randomWord", randomWord);
+
+    $("body").data("userGuessValues", userGuessValues);
   });
 
   $(".alphabetBtn").click(function (){
     var letterChoice = ($(this).text());
+    letterMatch(letterChoice);
     console.log(letterChoice);
 
 
