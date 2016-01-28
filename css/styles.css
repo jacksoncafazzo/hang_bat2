@@ -10,25 +10,16 @@
 
 
 
-.letterSpaces {
+.row-centered {
   text-align: center;
-  border-bottom: 5px solid black;
-  margin-left: 3px;
-  margin-right: 3px;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
   font-size: 50px;
   font-weight: bold;
-}
-
-.userGuess {
-  visibility: hidden;
-}
-
-#spacesRow {
-  /*border-bottom: 2px solid black;*/
-
-}
-
-#letterSpaces .userGuess {
-  /*min-height: 20em;*/
-
+  border-bottom: 5px solid black;
+  margin-right: 8px;
+  margin-left: 8px;
 }
