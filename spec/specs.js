@@ -27,3 +27,29 @@ describe("getColumnWidths", function() {
     expect(getColumnWidths(currentArray)).to.equal(2)
   });
 });
+
+describe("letterMatch", function () {
+  it("check the randomWord letters for a match", function () {
+    expect(letterMatch('a')).to.equal('a');
+  });
+});
+
+// describe("userGuessValues", function () {
+//   it("creates an object to show if letter matches", function () {
+//     var randomWord = ['m','a','n','g','o'];
+//     var letter = "a";
+//       expect(new userGuessValues("n", randomWord)).to.eql();
+//   });
+// });
+
+describe("userGuessValues", function () {
+  it("creates an object with the following properties", function () {
+    var randomWord = ['m','a','n','g','o'];
+    var letter = "a";
+    var matchTrue = true;
+    var userGuess = new userGuessValues(letter, randomWord, matchTrue);
+      expect(userGuess.letter).to.equal("a");
+      expect(userGuess.randomWord).to.eql['m','a','n','g','o'];
+      expect(userGuess.matchTrue).to.equal(true);
+  });
+});

@@ -4,14 +4,21 @@
 }
 
 #playNewGame {
-  margin-top: 5em;
+  margin-top: 12em;
   margin-bottom: 5em;
+}
+
+.table {
+  margin-top: 4em;
+  max-width: 180px;
+  text-align: center;
 }
 
 
 
 .row-centered {
   text-align: center;
+  margin-top: 12em;
 }
 
 .col-centered {

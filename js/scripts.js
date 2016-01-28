@@ -12,10 +12,35 @@ function getColumnWidths (currentArray) {
   return Math.floor(12 / currentArray.length);
 }
 
+function letterMatch (letter) {
+  // debugger;
+  var randomWord = ['m','a','n','g','o'];
+  // var randomWord = $("body").data("randomWord");
+  for (var i = 0; i < randomWord.length; i++) {
+    if (letter === randomWord[i]) {
+      (randomWord[i]);
+      return i;
+    // } else {
+    //   return false;
+    }
+
+  }
+  var alphabetArray = alphabetArray.slice.call(letter);
+
+console.log(alphabetArray);
+}
+
+function userGuessValues (letter, randomWord, matchTrue) {
+  this.letter = letter;
+  this.randomWord = randomWord;
+  this.matchTrue = matchTrue;
+}
+
 $(document).ready(function() {
   var wordBank = ["mango", "guava", "hibiscus", "megabat", "nectars", "fruit", "watermelon", "bananas", "seeds", "peels", "pulpy"];
   $("body").data("wordBank", wordBank);
   $("#playNewGame").click(function() {
+    var alphabetArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     // debugger;
     $("#spacesRow").empty();
     var wordBank = $("body").data("wordBank");
@@ -27,20 +52,11 @@ $(document).ready(function() {
       $("#letterDisplay" + i).text(randomWord[i]);
       $("#letterDisplay" + i).hide();
     }
-    // for (var i = 0; i < randomWord.length; i++) {
-  });
-});
 
-// <div class="col-sm-3 letterSpaces" id="letterSpaces0">
-//   <div class="userGuess" id="userGuess0">
-//   </div>
-// </div>
-// <div class="col-sm-3 letterSpaces" id="letterSpaces1">
-//   <div class="userGuess" id="userGuess1">
-//   </div>
-// </div><div class="col-sm-3 letterSpaces" id="letterSpaces2">
-//   <div class="userGuess" id="userGuess2">
-//   </div>
-// </div>
-//
-// '<div class="col-sm-' + getColumnWidths(randomWord) + ' letterSpaces" id="letterSpaces' + i + '"><div class="userGuess" id="userGuess' + i + '"></div></div>');
+    $("body").data("randomWord", randomWord);
+  });
+  //
+  // new click jquerey
+  // $("body").data("alphabetArray")
+
+});
