@@ -19,15 +19,18 @@ function letterMatch (userGuessValues) {
   var letter = userGuessValues.letter;
 
   for (var i = 0; i < randomWord.length; i++) {
-    if (letter === randomWord[i]) {
+    if (randomWord[i] === letter) {
       userGuessValues.matchTrue[i] = true;
-      for (var i = 0; i < remainingLetters; i++) {
-        if (letter === remainingLetters[i]) {
-          remainingLetters = remainingLetters.splice(i, 1);
-        }
-      }
     } else
       userGuessValues.matchTrue[i] = false;
+  }
+
+  for (var i = 0; i < remainingLetters; i++) {
+    if (remainingLetters[i] === letter) {
+      remainingLetters.splice([i], 1);
+      console.log(remainingLetters);
+
+    }
   }
 
 
@@ -76,6 +79,7 @@ $(document).ready(function() {
     var userGuessValues = $("body").data("userGuessValues");
 
     var letterChoice = ($(this).text());
+    letterChoice = letterChoice.toLowerCase();
     userGuessValues.letter = letterChoice;
     letterMatch(userGuessValues);
     console.log(letterChoice);
