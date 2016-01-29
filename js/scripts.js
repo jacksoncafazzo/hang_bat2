@@ -12,20 +12,31 @@ function getColumnWidths (currentArray) {
   return Math.floor(12 / currentArray.length);
 }
 
-function letterMatch (letter) {
+function letterMatch (userGuessValues) {
   // debugger;
-  var userGuessValues = $("body").data("userGuessValues");
   var randomWord = userGuessValues.randomWord;
   var remainingLetters = userGuessValues.remainingLetters;
+  var letter = userGuessValues.letter;
 
   for (var i = 0; i < randomWord.length; i++) {
     if (letter === randomWord[i]) {
       userGuessValues.matchTrue[i] = true;
-      remainingLetters = remainingLetters.splice(letter, letter);
-      console.log(remainingLetters);
+      for (var i = 0; i < remainingLetters; i++) {
+        if (letter === remainingLetters[i]) {
+          remainingLetters = remainingLetters.splice(i, 1);
+        }
+      }
     } else
       userGuessValues.matchTrue[i] = false;
   }
+
+
+  userGuessValues.remainingLetters = remainingLetters;
+  console.log(remainingLetters);
+  console.log(userGuessValues);
+  // debugger;
+  // var userGuessValues = $("body").data("userGuessValues", userGuessValues);
+
   return userGuessValues;
 
   // var alphabetArray = alphabetArray.slice.call(letter);
@@ -62,9 +73,13 @@ $(document).ready(function() {
   });
 
   $(".alphabetBtn").click(function (){
+    var userGuessValues = $("body").data("userGuessValues");
+
     var letterChoice = ($(this).text());
-    letterMatch(letterChoice);
+    userGuessValues.letter = letterChoice;
+    letterMatch(userGuessValues);
     console.log(letterChoice);
+    $("body").data("userGuessValues", userGuessValues);
 
 
   });
